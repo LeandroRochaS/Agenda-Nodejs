@@ -1,0 +1,24 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2 my-5"></div>
+
+    <div class="col-lg-8 my-5">
+      <h1 class="text-center mt-3">Olá <%= user.email %> </h1>
+      <p class="text-center lead">Você precisa sair para criar outra conta</p>
+
+      <%- include('includes/messages') %>
+
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="d-grid gap-3 col-5 mx-auto">
+    <button class="btn btn btn-outline-success bnt-lg" type="button"><a  href="/" style="text-decoration: none; color:rgb(0, 0, 0)">Seus contatos</a></button>
+    <button class="btn btn btn-outline-success bnt-lg" type="button"><a  href="/contato/index" style="text-decoration: none; color:rgb(0, 0, 0)">Cadastrar contatos</a></button>
+  </div>
+ 
+
+</div>
+
+<%- include('includes/footer') %>

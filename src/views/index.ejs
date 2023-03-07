@@ -1,0 +1,59 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+<div class="content">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-5">
+      <h1 class="text-center mt-3">Agenda</h1>
+      <% if(!user) { %>
+      <p class="text-center text-danger lead">Faça Login ou crie sua conta</p>
+      <% } else { %>
+      <p class="text-center lead">Seus contatos então abaixo</p>
+      <% } %>
+      <%- include('includes/messages') %>
+
+      <div class="responsive-table">
+        <table class="table my-3">
+          <tr>
+            <td>Nome</td>
+            <td>Sobrenome</td>
+            <td>E-mail</td>
+            <td>Telefone</td>
+            <td>Editar</td>
+            <td>Excluir</td>
+          </tr>
+          <% contatos.forEach(contato => { %>
+            <tr>
+              <td><%= contato.nome %></td>
+              <td><%= contato.sobrenome %></td>
+              <td><%= contato.email %></td>
+              <td><%= contato.telefone %></td>
+              <td><a  style="text-decoration: none;" href="/contato/index/<%= contato._id %>">  <i class="bi bi-pencil-square"></i></a></td>
+              <td><a class="text-danger" href="/contato/delete/<%= contato._id %>"><i class="bi bi-trash"></i></a></td>
+            </tr>
+            <% });%>
+        </table>
+      </div>
+
+
+
+
+    </div>  
+
+    </div>
+
+
+    <div class="col-lg-2">
+
+    </div>
+  </div>
+</div>
+
+
+
+<%- include('includes/footer') %>
+  
