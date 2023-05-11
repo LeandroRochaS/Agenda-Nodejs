@@ -51,6 +51,10 @@ app.use(middlewareGlobal);
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes);
- 
 
+app.on('pronto', () => {
+  app.listen(3002, () => {
+    console.log('Acessar http://localhost:3002');
+    console.log('Servidor executando na porta 3002');
+  });
 });
